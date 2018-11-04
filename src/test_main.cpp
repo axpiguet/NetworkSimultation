@@ -29,6 +29,7 @@ TEST(networkTest, connect) {
     std::vector<size_t> ngb = net.neighbors(9);
     EXPECT_EQ(ngb.size(), 3);
     EXPECT_TRUE(ngb[0]==10 && ngb[1]==8 && ngb[2]==1);
+
     double numlink = 0;
     for (int rep=0; rep<100; rep++) 
       numlink += 0.01*net.random_connect(2);
@@ -45,6 +46,7 @@ TEST(networkTest, values) {
 }
 
 int main(int argc, char **argv) {
+	
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
